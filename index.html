@@ -1,0 +1,858 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Het Grote Najaarsavontuur</title>
+<meta name="description" content="Reisgids-website voor de grote camper-rondreis door Italië, najaar 2026: Luxemburg, Stelvio, Sardinië, Amalfi, Sicilië, Puglia en de Adriatische terugreis.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Archivo:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --paper:#F6F5EF;
+  --card:#FFFFFF;
+  --ink:#262B22;
+  --muted:#6B6F60;
+  --line:#DFDCD0;
+  --sea:#23647E;
+  --sea-soft:#E7EEF0;
+  --gold:#B27A1E;
+  --gold-soft:#F4EBDA;
+  --tip-bg:#EBF1F2;
+  --tip-border:#9FC0CC;
+  --chip-bg:#EFEEE6;
+  --shadow:0 1px 2px rgba(38,43,34,.06),0 8px 24px rgba(38,43,34,.07);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#171A14;
+    --card:#1F231C;
+    --ink:#E9E7DC;
+    --muted:#A6AA98;
+    --line:#343A2F;
+    --sea:#8DBECE;
+    --sea-soft:#22323A;
+    --gold:#D9A04B;
+    --gold-soft:#32301F;
+    --tip-bg:#1E2A2E;
+    --tip-border:#3D5862;
+    --chip-bg:#282D24;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#171A14;
+  --card:#1F231C;
+  --ink:#E9E7DC;
+  --muted:#A6AA98;
+  --line:#343A2F;
+  --sea:#8DBECE;
+  --sea-soft:#22323A;
+  --gold:#D9A04B;
+  --gold-soft:#32301F;
+  --tip-bg:#1E2A2E;
+  --tip-border:#3D5862;
+  --chip-bg:#282D24;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"Newsreader",Georgia,"Times New Roman",serif;
+  font-size:1.06rem;
+  line-height:1.62;
+}
+a{color:var(--sea)}
+a:focus-visible{outline:2px solid var(--sea);outline-offset:2px;border-radius:2px}
+.wrap{max-width:920px;margin:0 auto;padding:0 20px}
+
+/* ---------- Hero ---------- */
+header.hero{
+  border-bottom:1px solid var(--line);
+  padding:64px 0 40px;
+  background:
+    radial-gradient(1200px 400px at 85% -10%, var(--sea-soft), transparent 70%),
+    var(--paper);
+}
+.eyebrow{
+  font-family:"Archivo",system-ui,sans-serif;
+  font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--gold);font-weight:600;margin:0 0 14px;
+}
+h1{
+  font-family:"Marcellus",Georgia,serif;
+  font-weight:400;
+  font-size:clamp(2.3rem,6vw,3.9rem);
+  line-height:1.06;
+  margin:0 0 18px;
+  text-wrap:balance;
+  letter-spacing:.01em;
+}
+.hero p.lede{
+  max-width:36em;
+  font-size:1.15rem;
+  color:var(--muted);
+  margin:0 0 30px;
+}
+.route-strip{
+  font-family:"Archivo",system-ui,sans-serif;
+  font-size:.85rem;
+  color:var(--ink);
+  border:1px solid var(--line);
+  background:var(--card);
+  border-radius:10px;
+  padding:12px 16px;
+  line-height:1.9;
+  box-shadow:var(--shadow);
+}
+.route-strip .sep{color:var(--gold);padding:0 .35em}
+.stats{
+  display:flex;flex-wrap:wrap;gap:28px;
+  margin-top:26px;
+}
+.stat{min-width:100px}
+.stat b{
+  display:block;
+  font-family:"Marcellus",Georgia,serif;
+  font-weight:400;
+  font-size:1.7rem;
+  color:var(--sea);
+  font-variant-numeric:tabular-nums;
+}
+.stat span{
+  font-family:"Archivo",system-ui,sans-serif;
+  font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--muted);
+}
+
+/* ---------- Inhoud / nav ---------- */
+nav.toc{
+  padding:22px 0;
+  border-bottom:1px solid var(--line);
+}
+nav.toc ol{
+  list-style:none;margin:0;padding:0;
+  display:flex;flex-wrap:wrap;gap:8px 18px;
+  font-family:"Archivo",system-ui,sans-serif;
+  font-size:.85rem;
+}
+nav.toc a{
+  text-decoration:none;color:var(--ink);
+  border-bottom:2px solid var(--line);
+  padding-bottom:2px;
+}
+nav.toc a:hover{border-color:var(--sea);color:var(--sea)}
+nav.toc .num{color:var(--gold);font-weight:600;margin-right:.4em}
+
+/* ---------- Timeline ---------- */
+main{padding:40px 0 20px}
+.stage{
+  position:relative;
+  padding:26px 0 34px 74px;
+}
+.stage::before{ /* route-lijn */
+  content:"";position:absolute;left:27px;top:0;bottom:0;
+  border-left:2px dashed var(--line);
+}
+.stage:first-of-type::before{top:36px}
+.stage:last-of-type::before{bottom:auto;height:36px}
+.medal{
+  position:absolute;left:0;top:26px;
+  width:56px;height:56px;border-radius:50%;
+  background:var(--card);
+  border:2px solid var(--gold);
+  color:var(--gold);
+  font-family:"Marcellus",Georgia,serif;
+  font-size:1.25rem;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:var(--shadow);
+}
+.stage-head{margin-bottom:6px}
+.stage-head .kicker{
+  font-family:"Archivo",system-ui,sans-serif;
+  font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--muted);font-weight:600;margin:8px 0 4px;
+}
+h2{
+  font-family:"Marcellus",Georgia,serif;
+  font-weight:400;
+  font-size:clamp(1.5rem,3.4vw,2.05rem);
+  margin:0 0 8px;
+  text-wrap:balance;
+}
+.stage-route{
+  font-family:"Archivo",system-ui,sans-serif;
+  font-size:.83rem;color:var(--muted);
+  margin:0 0 20px;line-height:1.8;
+}
+.stage-route .sep{color:var(--gold);padding:0 .3em}
+
+/* ---------- Plaats-kaarten ---------- */
+.place{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:20px 24px;
+  margin:0 0 16px;
+  box-shadow:var(--shadow);
+}
+.place h3{
+  font-family:"Marcellus",Georgia,serif;
+  font-weight:400;
+  font-size:1.28rem;
+  margin:0 0 2px;
+}
+.place .sub{
+  font-family:"Archivo",system-ui,sans-serif;
+  font-size:.8rem;color:var(--muted);
+  margin:0 0 12px;
+}
+.place ul{margin:10px 0 4px;padding-left:20px}
+.place li{margin:0 0 7px}
+.place li::marker{color:var(--gold)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 2px}
+.chip{
+  font-family:"Archivo",system-ui,sans-serif;
+  font-size:.72rem;font-weight:600;letter-spacing:.06em;
+  background:var(--chip-bg);
+  border:1px solid var(--line);
+  color:var(--muted);
+  border-radius:999px;
+  padding:3px 10px;
+}
+.klabel{
+  font-family:"Archivo",system-ui,sans-serif;
+  font-size:.74rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--sea);
+}
+
+/* ---------- Onderzoeks-tips ---------- */
+.tip{
+  background:var(--tip-bg);
+  border:1px solid var(--tip-border);
+  border-left:4px solid var(--sea);
+  border-radius:10px;
+  padding:18px 22px;
+  margin:20px 0 6px;
+}
+.tip .tip-label{
+  font-family:"Archivo",system-ui,sans-serif;
+  font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--sea);
+  margin:0 0 8px;
+}
+.tip p{margin:0 0 10px}
+.tip p:last-child{margin-bottom:0}
+.tip .src{
+  font-family:"Archivo",system-ui,sans-serif;
+  font-size:.78rem;color:var(--muted);
+}
+.tip .src a{color:var(--sea);text-decoration:none;border-bottom:1px solid var(--tip-border)}
+.tip .src a:hover{border-color:var(--sea)}
+
+/* ---------- Footer ---------- */
+footer{
+  border-top:1px solid var(--line);
+  margin-top:48px;
+  padding:34px 0 60px;
+  color:var(--muted);
+  font-size:.95rem;
+}
+footer .fin{
+  font-family:"Marcellus",Georgia,serif;
+  font-size:1.35rem;color:var(--ink);
+  margin:0 0 10px;
+}
+@media (max-width:640px){
+  .stage{padding-left:0}
+  .stage::before{display:none}
+  .medal{position:static;margin-bottom:10px}
+  .place{padding:16px 18px}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Reisboek · najaar 2026 · André &amp; Tineke · Carado T337</p>
+    <h1>Het Grote Najaarsavontuur</h1>
+    <p class="lede">Ruim 7.000 kilometer met de camper: van Bennekom over de Stelvio naar Sardinië, de Amalfikust, Sicilië en Puglia — en langs de Adriatische kust weer naar huis. Aangevuld met extra tips uit online onderzoek (blauwe kaders), inclusief bronnen.</p>
+    <div class="route-strip">
+      Bennekom <span class="sep">➔</span> Luxemburg <span class="sep">➔</span> Bodensee/Allgäu <span class="sep">➔</span> Reschenpas <span class="sep">➔</span> Stelvio <span class="sep">➔</span> Sardinië <span class="sep">➔</span> Amalfi &amp; Cilento <span class="sep">➔</span> Sicilië <span class="sep">➔</span> Matera &amp; Puglia <span class="sep">➔</span> San Marino <span class="sep">➔</span> Ravenna <span class="sep">➔</span> Gardameer <span class="sep">➔</span> Bennekom
+    </div>
+    <div class="stats">
+      <div class="stat"><b>7.000+</b><span>kilometer</span></div>
+      <div class="stat"><b>7</b><span>etappes</span></div>
+      <div class="stat"><b>2</b><span>eilanden</span></div>
+      <div class="stat"><b>48</b><span>haarspelden Stelvio</span></div>
+      <div class="stat"><b>16 okt</b><span>camper inleveren</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="toc" aria-label="Etappes">
+  <div class="wrap">
+    <ol>
+      <li><a href="#deel1"><span class="num">I</span>Luxemburg</a></li>
+      <li><a href="#deel1b"><span class="num">I½</span>Zuid-Duitsland</a></li>
+      <li><a href="#deel2"><span class="num">II</span>Stelvio</a></li>
+      <li><a href="#deel3"><span class="num">III</span>Sardinië</a></li>
+      <li><a href="#deel4"><span class="num">IV</span>Vasteland Zuid</a></li>
+      <li><a href="#deel5"><span class="num">V</span>Sicilië</a></li>
+      <li><a href="#deel6"><span class="num">VI</span>Matera &amp; Puglia</a></li>
+      <li><a href="#deel7"><span class="num">VII</span>Terugreis</a></li>
+    </ol>
+  </div>
+</nav>
+
+<main>
+<div class="wrap">
+
+<!-- ================= DEEL I ================= -->
+<section class="stage" id="deel1">
+  <div class="medal" aria-hidden="true">I</div>
+  <div class="stage-head">
+    <p class="kicker">Deel 1 · De start</p>
+    <h2>Luxemburg: Diekirch, Vianden &amp; het Müllerthal</h2>
+    <p class="stage-route">Bennekom <span class="sep">➔</span> CVD Driel (camper ophalen) <span class="sep">➔</span> Diekirch <span class="sep">➔</span> dag 2: Vianden <span class="sep">➔</span> dag 3: Müllerthal <span class="sep">➔</span> dag 4: doorreis</p>
+  </div>
+
+  <article class="place">
+    <h3>Diekirch</h3>
+    <p class="sub">Standplaats &amp; historie — Camping de la Sûre</p>
+    <ul>
+      <li>Historisch stadje aan de Sûre, bekend om zijn brouwerijhistorie (het ezel-symbool keert overal terug) en de voetgangerszone rond de <em>Place de la Libération</em>.</li>
+      <li><b>Musée National d'Histoire Militaire:</b> een van de indrukwekkendste WOII-musea van West-Europa, met levensgrote diorama's van het Ardennenoffensief (<em>Battle of the Bulge</em>).</li>
+      <li><b>Het ezel-ritueel:</b> wandel naar de bronzen ezelsfontein in het centrum — de ezel aantikken hoort bij de lokale traditie.</li>
+      <li>Ruime, vlakke camperplekken direct aan het water; wandelpromenade langs de rivier vanaf de camper.</li>
+    </ul>
+    <div class="chips"><span class="chip">🚐 camping aan de rivier</span><span class="chip">🏛️ WOII-museum</span></div>
+  </article>
+
+  <article class="place">
+    <h3>Vianden</h3>
+    <p class="sub">Middeleeuwse parel op de rots</p>
+    <ul>
+      <li>Fotogeniekste stadje van de Luxemburgse Ardennen, diep in de vallei van de Our, gedomineerd door een van de mooiste middeleeuwse kastelen van Europa.</li>
+      <li><b>Château de Vianden:</b> gebouwd tussen de 11e en 14e eeuw op Romeinse fundamenten — ridderzalen, kapellen en koninklijke vertrekken.</li>
+      <li><b>Victor Hugo</b> woonde hier in ballingschap; zijn woonhuis aan de brug is nu een klein museum.</li>
+      <li><span class="klabel">Gravelroute André:</span> ca. 35–45 km via Komoot — vanaf Diekirch over de bosrug van Gilsdorf, onverharde boswegen en pittige heuvels richting de Our-vallei, met uitzicht op het kasteel vóór de afdaling.</li>
+    </ul>
+    <div class="chips"><span class="chip">🏰 kasteel</span><span class="chip">🚲 gravel 35–45 km</span></div>
+  </article>
+
+  <article class="place">
+    <h3>Het Müllerthal &amp; Echternach</h3>
+    <p class="sub">'Klein Zwitserland'</p>
+    <ul>
+      <li>Sprookjesachtige zandsteenrotsen, mosbossen, houten bruggetjes en de waterval <em>Schiessentümpel</em>.</li>
+      <li><b>Echternach:</b> de oudste stad van Luxemburg — Sint-Willibrordusbasiliek (bekend van de Springprocessie) en lunch op het middeleeuwse <em>Place du Marché</em>.</li>
+      <li><span class="klabel">Samen op de fiets (≈50 km):</span> geheel autovrij en vlak over fietspaden PC16 en PC11, langs de kronkels van de Sûre naar Echternach en terug.</li>
+    </ul>
+    <div class="chips"><span class="chip">🥾 waterval &amp; rotsen</span><span class="chip">🚲 autovrij 50 km</span></div>
+  </article>
+
+  <div class="tip">
+    <p class="tip-label">💡 Extra suggestie uit onderzoek — plan de campings vóóruit</p>
+    <p>Eén ding om nú al te regelen: het gros van de Italiaanse campings sluit tussen eind september en half oktober voor de winter. Aan de kusten van Sardinië en Sicilië blijven ze langer open dan bij de noordelijke meren, maar controleer per camping de sluitingsdatum voordat je erop rekent. Met de <b>ACSI CampingCard</b> betaal je in het laagseizoen een vast tarief van ongeveer € 13–27 per nacht op de campings die wél open zijn.</p>
+    <p>Waar campings dicht zijn, zijn <em>aree di sosta</em> en agricampeggio's de oplossing: die blijven het hele jaar open en hebben water en een dumpstation. De apps <b>Park4Night</b> en <b>Campercontact</b> zijn hiervoor onmisbaar — handig om ze vóór vertrek te installeren en offline kaarten te downloaden.</p>
+    <p class="src">Bronnen: <a href="https://adriacamps.com/en/blog/news/opening-dates-of-italian-campsites-in-2025/">Adriacamps — openingsdata Italiaanse campings</a> · <a href="https://thegapdecaders.com/acsi-camping-card/">The Gap Decaders — ACSI CampingCard</a></p>
+  </div>
+</section>
+
+<!-- ================= DEEL I½ ================= -->
+<section class="stage" id="deel1b">
+  <div class="medal" aria-hidden="true">I½</div>
+  <div class="stage-head">
+    <p class="kicker">Deel 1½ · Tussenstop</p>
+    <h2>Zuid-Duitsland, aan het water</h2>
+    <p class="stage-route">Twee nachten om de rit naar Zuid-Tirol relaxt op te breken</p>
+  </div>
+
+  <article class="place">
+    <h3>Optie A — De Bodensee</h3>
+    <p class="sub">Camping Gohren bij Kressbronn · ACSI</p>
+    <ul>
+      <li>Rustig in een natuurgebied direct aan het meer, eigen kiezelstrand en zicht op de Zwitserse Alpen.</li>
+      <li><span class="klabel">Fiets-tip:</span> vanaf de camping direct de vlakke <em>Bodensee-Radweg</em> op, tussen de appelboomgaarden door naar eilandstad <b>Lindau</b> (haveningang met de Beierse Leeuw en de vuurtoren).</li>
+    </ul>
+    <div class="chips"><span class="chip">🚐 ACSI</span><span class="chip">🚲 Bodensee-Radweg</span></div>
+  </article>
+
+  <article class="place">
+    <h3>Optie B — De Allgäu</h3>
+    <p class="sub">Camping Brunnen bij Füssen, aan de Forggensee</p>
+    <ul>
+      <li>Adembenemend direct uitzicht op sprookjeskasteel <b>Schloss Neuschwanstein</b> aan de voet van de bergen.</li>
+    </ul>
+    <div class="chips"><span class="chip">🏰 Neuschwanstein-zicht</span></div>
+  </article>
+
+</section>
+
+<!-- ================= DEEL II ================= -->
+<section class="stage" id="deel2">
+  <div class="medal" aria-hidden="true">II</div>
+  <div class="stage-head">
+    <p class="kicker">Deel 2 · De koninginnenrit</p>
+    <h2>Zuid-Tirol &amp; de Stelvio</h2>
+    <p class="stage-route">Reschenpas <span class="sep">➔</span> Alt-Graun <span class="sep">➔</span> Vinschgau-dal (Prato / Laas) <span class="sep">➔</span> Stelvio-beklimmingen <span class="sep">➔</span> Goldseeweg</p>
+  </div>
+
+  <article class="place">
+    <h3>Reschenpas &amp; het Vinschgau-dal</h3>
+    <p class="sub">Prato allo Stelvio · Laas · Glurns</p>
+    <ul>
+      <li>Vlak na de grens: het stuwmeer van <b>Alt-Graun</b> met de beroemde verdronken kerktoren (bekend uit de Netflix-serie <em>Curon</em>).</li>
+      <li>Het Vinschgau is het droogste, zonnigste dal van de Alpen — miljoenen appelbomen kleuren de dalbodem.</li>
+      <li><b>Laas:</b> wereldberoemd om het zuiverste marmer ter wereld; zelfs de stoepranden zijn van spierwit Laaser marmer.</li>
+      <li><b>Glurns (Glorenza):</b> kleinste stadje van Zuid-Tirol (&lt;900 inwoners), met volledig gesloten middeleeuwse stadsmuren.</li>
+      <li><span class="klabel">Standplaats:</span> Camping Sägemühle in Prato (aan de voet van de pas) of Camping Badlerhof in Laas (ACSI-voordeel).</li>
+    </ul>
+    <div class="chips"><span class="chip">⛪ verdronken kerktoren</span><span class="chip">🚐 2 camping-opties</span></div>
+  </article>
+
+  <article class="place">
+    <h3>Passo dello Stelvio — 2.758 m</h3>
+    <p class="sub">Op één na hoogste verharde bergpas van de Alpen · 48 genummerde haarspelden</p>
+    <ul>
+      <li>Meesterwerk van wegenbouw uit 1820; aan de oostzijde meanderen 48 genummerde <em>tornanti</em> tegen de rotswand omhoog.</li>
+      <li><span class="klabel">André op de Canyon Grail:</span> klim 1 — oostzijde vanaf Prato: 24,5 km, 1.800 hoogtemeters. Klim 2 — westzijde vanaf Bormio: 21,5 km, 1.530 hm, ruiger, door rotsgalerijen en langs de watervallen van de Braulio-vallei.</li>
+      <li><span class="klabel">Tineke, de slimme oplossing:</span> op de e-bike het beschutte traject Prato → Trafoi (ca. 11 km, geen afgronden), daar op streekbus <b>lijn 271</b> (Südtirolmobil) — in 30 minuten hoogtevrees-vrij naar de top om André op te wachten.</li>
+    </ul>
+    <div class="chips"><span class="chip">🚲 1.800 hm klim</span><span class="chip">🚌 bus 271 naar de top</span></div>
+  </article>
+
+  <article class="place">
+    <h3>De Goldseeweg (Route 20)</h3>
+    <p class="sub">Panorama-wandeling op hoogte</p>
+    <ul>
+      <li>Samen met bus 271 terug naar de pashoogte (2.758 m); vandaar over een vrijwel vlak, oud militair pad langs de bergkam.</li>
+      <li>Ruim 8,5 km onbelemmerd zicht op de gletsjers en de besneeuwde <b>'Koning Ortler'</b> (3.905 m); eindigen bij de <em>Furkelhütte</em> en met de stoeltjeslift zwevend omlaag naar Trafoi.</li>
+    </ul>
+    <div class="chips"><span class="chip">🥾 8,5 km paskam</span><span class="chip">🚡 stoeltjeslift</span></div>
+  </article>
+
+  <div class="tip">
+    <p class="tip-label">💡 Extra suggestie uit onderzoek — Stelvio: check de pas, en laat de camper beneden</p>
+    <p>De Stelvio is normaal open van half/eind mei tot ongeveer eind oktober, dus eind september/begin oktober zit je goed. Er is echter <b>geen vaste sluitingsdatum</b>: vroege sneeuwval kan de pas van de ene op de andere dag (tijdelijk of voor het seizoen) sluiten. De live-status staat op de officiële Bormio-pagina over de alpenpassen — check die kort vóór de klim.</p>
+    <p>Belangrijker nog: reisgidsen waarschuwen expliciet dat de Stelvio <b>geen plek is voor lange voertuigen</b> — de 48 haarspelden aan de kant van Prato zijn erg krap en campers zijn er al halverwege vast komen te zitten. Jullie plan is daarmee precies goed: <b>de Carado in Prato laten staan</b> en met de fiets en bus 271 naar boven. Ga niet in de verleiding om de camper alsnog naar de top te rijden.</p>
+    <p>Mocht de pas dicht zijn, dan hoeft dat de reis niet te verstoren: vanaf Prato rijd je gewoon het Vinschgau af over de SS38 via Merano en Bolzano naar de A22. (Het Zwitserse alternatief, de Umbrailpas, gaat bij sneeuw óók dicht.)</p>
+    <p class="src">Bronnen: <a href="https://www.bormio.eu/en/live-info/alpine-passes">Bormio — live status alpenpassen</a> · <a href="https://www.epikdrives.com/best-drives/stelvio-pass">Epik Drives — Stelvio Pass</a></p>
+  </div>
+</section>
+
+<!-- ================= DEEL III ================= -->
+<section class="stage" id="deel3">
+  <div class="medal" aria-hidden="true">III</div>
+  <div class="stage-head">
+    <p class="kicker">Deel 3 · 14–16 dagen, tegen de klok in</p>
+    <h2>De Ronde van Sardinië</h2>
+    <p class="stage-route">Livorno <span class="sep">⛴</span> Olbia (±5,5 u) <span class="sep">➔</span> La Maddalena &amp; Gallura <span class="sep">➔</span> Alghero <span class="sep">➔</span> Bosa &amp; Sinis <span class="sep">➔</span> Costa Verde &amp; Cagliari <span class="sep">➔</span> Oostkust SS125 <span class="sep">➔</span> Olbia</p>
+  </div>
+
+  <article class="place">
+    <h3>Zone 1 — Noord: La Maddalena, Gallura &amp; Capo Testa</h3>
+    <p class="sub">Graniet, kurkeiken en turquoise water</p>
+    <ul>
+      <li><b>San Pantaleo:</b> bergdorpje met de bijzondere 'Gaudí-achtige' kerk Chiesa di Stella Maris; verderop het mondaine <b>Porto Cervo</b>.</li>
+      <li><b>Roccia dell'Orso:</b> de berenrots even vóór Palau.</li>
+      <li><b>Arzachena:</b> kleurrijke trappartij, archeologische monumenten, het kleinste museum aan de Corso Garibaldi, woensdagmarkt en de necropolis <em>Li Muri</em> (oudste neolithische site, ronde graven).</li>
+      <li><b>La Maddalena-excursie:</b> camper op de havenparkeerplaats in Palau (Piazza Molo Baragone), fietsen mee op de passagiersboot — panoramisch fietsen over La Maddalena en Caprera zonder parkeergedoe.</li>
+      <li><b>Caprera:</b> het Compendio Garibaldino, het landgoed waar volksheld Giuseppe Garibaldi zijn laatste jaren doorbracht. En <b>Cala Coticcio</b> ('Sardinisch Tahiti'), een van de mooiste baaien van Europa.</li>
+      <li><b>Capo Testa &amp; Valle della Luna:</b> buitenaardse granietformaties op het noordelijkste puntje; in de 'Maanvallei' woonde in de jaren '60 een hippiekolonie.</li>
+      <li><span class="klabel">Gravelen:</span> in het binnenland van Gallura bij Aggius en Tempio Pausania, over boswegen tussen eeuwenoude kurkeiken.</li>
+      <li><b>Castelsardo:</b> een van de mooiste dorpjes van Italië — Castello dei Doria (uitzicht tot Corsica, vlechtambacht: souvenir!); buiten het dorp aan de SS134 de <em>Roccia dell'Elefante</em>. In <b>Porto Torres</b>: San Gavino, de grootste romaanse kerk van Sardinië.</li>
+    </ul>
+    <div class="chips"><span class="chip">⛴ fietsen mee op de boot</span><span class="chip">🚲 gravel Gallura</span><span class="chip">🏖 Cala Coticcio</span></div>
+  </article>
+
+  <article class="place">
+    <h3>Zone 2 — Alghero &amp; Capo Caccia</h3>
+    <p class="sub">Catalaanse vestingstad aan de noordwestkust</p>
+    <ul>
+      <li>Eeuwenlang Catalaans: tweetalige straatnaambordjes en Spaanse invloeden in de keuken. Bezoek de duomo en de gekleurde koepel van San Michele.</li>
+      <li>Wandel bij zonsondergang over de middeleeuwse zeemuren (<em>bastioni</em>) en langs de ateliers waar rode koraalsieraden worden gemaakt.</li>
+      <li><b>Capo Caccia &amp; Neptunusgrot:</b> loodrechte kliffen; afdalen via de <em>Escala del Cabirol</em> (654 treden in de rotswand) of per boot vanuit de haven.</li>
+      <li>🎬 Bij Capo Caccia en de Costa Smeralda werden scènes opgenomen voor de Bond-klassieker <em>The Spy Who Loved Me</em> (de witte Lotus Esprit uit zee!).</li>
+      <li><span class="klabel">Kookworkshop optie 1:</span> authentieke <em>culurgiones</em> (deegtasjes met aardappel, pecorino en munt) en verse <em>malloreddus</em> maken op een agriturismo bij Alghero.</li>
+    </ul>
+    <div class="chips"><span class="chip">🌅 bastioni bij zonsondergang</span><span class="chip">🍳 culurgiones</span><span class="chip">🎬 James Bond</span></div>
+  </article>
+
+  <article class="place">
+    <h3>Zone 3 — Bosa-panoramaroute &amp; het Sinis-schiereiland</h3>
+    <p class="sub">SP105 &amp; SP292</p>
+    <ul>
+      <li><b>De SP105</b> tussen Alghero en Bosa: een absolute droomweg, kronkelend hoog boven zee langs kliffen waar zeldzame vale gieren zweven.</li>
+      <li><b>Bosa:</b> pastelkleurige huisjes aan de rivier de Temo onder het Malaspina-kasteel (Serravalle); dinsdags streekmarkt. Fijne camperplaats direct aan de rivier (<em>Camperstop Bosa</em>).</li>
+      <li><b>Sinis</b> (goed te fietsen): natuurgebied met <b>Is Arutas</b> — 'rijstkorrelstrand' van wit-roze kwartskristallen — en <b>Tharros</b>, Fenicisch-Romeinse ruïnestad op de klifrand bij San Giovanni di Sinis.</li>
+    </ul>
+    <div class="chips"><span class="chip">🛣 droomweg SP105</span><span class="chip">🚐 camperplaats aan de rivier</span><span class="chip">🚲 Sinis per fiets</span></div>
+  </article>
+
+  <article class="place">
+    <h3>Zone 4 — Costa Verde &amp; Cagliari</h3>
+    <p class="sub">Het ruige, wilde zuidwesten</p>
+    <ul>
+      <li><b>Duinen van Piscinas:</b> goudgele zandduinen tot 60 meter hoog, doorlopend tot in zee, begroeid met jeneverbessen.</li>
+      <li><b>Masua &amp; Pan di Zucchero:</b> bij de oude mijnruïnes rijst de 133 m hoge rotsnaald 'Suikerbrood' op uit het water; bezoek ook de mijn bij Iglesias.</li>
+      <li>Bezoek het atelier van Stefania Ariu (Via Costituzione 16).</li>
+      <li><b>Cagliari:</b> de middeleeuwse bovenwijk <em>Castello</em>; per e-bike het natuurpark <b>Molentargius</b> in, waar duizenden wilde flamingo's in de zoutpannen broeden.</li>
+    </ul>
+    <div class="chips"><span class="chip">🏜 60 m hoge duinen</span><span class="chip">🦩 flamingo's per e-bike</span></div>
+  </article>
+
+  <article class="place">
+    <h3>Zone 5 — Oostkust (SS125) &amp; Supramonte</h3>
+    <p class="sub">Terug naar Olbia via de Orientale Sarda</p>
+    <ul>
+      <li><b>Arbatax:</b> de felrode porfierrotsen <em>Rocce Rosse</em> direct bij de haven.</li>
+      <li><b>Passo Genna Silana (1.017 m):</b> vanaf Santa Maria Navarrese klimt de SS125 het Supramonte in; bij het panoramarestaurant zicht op de <b>Su Gorropu-kloof</b>, de 'Grand Canyon van Sardinië'.</li>
+      <li><b>Dorgali &amp; Oliena:</b> boeren-coöperaties voor biologische olijfolie (Bosana-olijf) en de krachtige <em>Cannonau</em>-wijn; ook bio-olijfolie in Siniscola.</li>
+      <li>Via heuveldorp <b>Posada</b> (Castello della Fava) en de stranden van San Teodoro ontspannen naar de dagboot in Olbia.</li>
+    </ul>
+    <div class="chips"><span class="chip">🍷 Cannonau</span><span class="chip">🫒 olijfolie proeven</span><span class="chip">⛴ dagboot naar Civitavecchia</span></div>
+  </article>
+
+  <div class="tip">
+    <p class="tip-label">💡 Extra suggestie uit onderzoek — Autunno in Barbagia: <b>Dorgali, 26–27 september</b></p>
+    <p>Dit is de mooiste vondst van het hele onderzoek en hij valt precies op jullie route. <b>Autunno in Barbagia</b> (ook bekend als <em>Cortes Apertas</em>) is het culturele hoogtepunt van de Sardijnse herfst: elk weekend opent een ander bergdorp zijn <em>cortes</em> — de privé-binnenhoven, oude woonhuizen en ambachtswerkplaatsen — voor bezoekers. Gratis proeverijen van culurgiones, seadas en cannonau, live demonstraties van weven, filigrein en maskermakerij, muziek en dans. De editie van 2026 (de 25e!) loopt van 5 september tot 13 december langs 33 dorpen.</p>
+    <p>Voor jullie route is <b>Dorgali op 26–27 september</b> de gouden kans: dat is exact het dorp waar jullie voor de olijfolie en cannonau naartoe gaan. Overweeg de oostkust-etappe (Zone 5) om dat weekend heen te plannen. Andere data binnen jullie reisperiode: Lula, Meana Sardo en Orotelli op 3–4 oktober, en Gavoi, Lollove en Tonara op 10–11 oktober. Orgosolo staat op 17–18 oktober — dan zijn jullie al thuis, maar de beroemde muurschilderingen zijn het hele jaar te zien. Let op: de dorpjes lopen behoorlijk vol, dus kom vroeg aan met de camper.</p>
+    <p class="src">Bronnen: <a href="https://www.sardegnaturismo.it/it/eventi/autunno-barbagia-2026">Sardegna Turismo — Autunno in Barbagia 2026</a> · <a href="https://www.sardegnatoujours.com/autunno-in-barbagia-cortes-apertas/">Sardegna Toujours — Cortes Apertas</a></p>
+  </div>
+
+  <div class="tip">
+    <p class="tip-label">💡 Extra suggestie uit onderzoek — twee omweggetjes en de veerboten</p>
+    <p><b>Grotta di Ispinigoli</b> (8 km noord van Dorgali, direct langs de SS125): hier staat de hoogste stalactiet-stalagmietzuil van Europa, 38 meter hoog. Rondleidingen elk uur in Italiaans en Engels, 280 treden, constant 15 °C — aanzienlijk minder toeristisch dan de bekendere Grotta del Bue Marino.</p>
+    <p><b>Su Nuraxi bij Barumini</b> (UNESCO, ongeveer een uur omrijden op de etappe Costa Verde → Cagliari): het indrukwekkendste nuraghe-complex van Sardinië uit circa 1500 v.Chr. Alleen met gids te bezoeken, reken op zo'n 2 uur. Wil je niet omrijden, dan is Nuraghe Losa bij Abbasanta (langs de SS131) een snellere variant.</p>
+    <p><b>Veerboten:</b> Livorno–Olbia (±9 uur) varen Moby en Grimaldi elk zo'n twee keer per dag; boek ruim een maand vooruit als je een hut wilt, want die zijn het eerst weg. Voor Olbia–Civitavecchia (±7,5 uur) varen Grimaldi en Tirrenia; de goedkoopste tarieven verschijnen 2–3 maanden vooraf. Campers betalen per lengte — geef de 7 meter eerlijk op, want er bestaan speciale tarieven tot precies 7 meter en de T337 valt daar net binnen. Wees ruim op tijd bij de haven: 90 minuten bij Moby, 2 uur bij Grimaldi.</p>
+    <p><b>Straat van Messina:</b> voor Caronte &amp; Tourist tussen Villa San Giovanni en Messina hoef je níet te boeken — de boot vaart 24/7 met tot ongeveer 30 afvaarten per dag. Kaartje bij de haven; een retour binnen 60 dagen is met korting.</p>
+    <p class="src">Bronnen: <a href="https://www.sardegnaturismo.it/en/explore/ispinigoli">Sardegna Turismo — Ispinigoli</a> · <a href="https://www.ferryhopper.com/en/blog/featured/grimaldi-lines-livorno-olbia-ferry">Ferryhopper — Livorno–Olbia</a> · <a href="https://www.carontetourist.it/en/strait-messina/timetables">Caronte &amp; Tourist — dienstregeling</a></p>
+  </div>
+
+  <div class="tip">
+    <p class="tip-label">⚠ Let op — ZTL-camera's en zwemwater</p>
+    <p>De <b>ZTL</b> (<em>Zona a Traffico Limitato</em>) is de grootste verborgen kostenpost van een Italiaanse camperreis: camera's registreren automatisch en buitenlandse campers krijgen de boete maanden later per post, ongeveer € 80–165 per camerapassage — en meerdere camera's betekent meerdere boetes. Volg de navigatie dus nooit blind een historisch centrum in. Op jullie route: <b>Cagliari</b> (Castello, Marina en Villanova), <b>Syracuse</b> (vrijwel heel Ortigia, met poortjes bij de bruggen), <b>Lecce</b> en <b>Bari Vecchia</b>. Jullie aanpak — camper op een <em>sosta</em> buiten het centrum en te voet of met de fiets naar binnen — is dus precies de juiste.</p>
+    <p>Goed nieuws voor de zwemliefhebber: begin oktober is het water rond Sardinië nog 21–22,5 °C, warmst bij Cagliari en de zuidkust — en die doen jullie als laatste. Sicilië zit nog hoger, rond 22–24,5 °C, met de zuidkust bij Scala dei Turchi als beste plek.</p>
+    <p class="src">Bronnen: <a href="https://rovee.io/topic/ztl-italy-motorhome/">Rovee — ZTL &amp; campers in Italië</a> · <a href="https://www.seatemperatu.re/europe/sardinia/month/october/">Zeewatertemperatuur Sardinië in oktober</a></p>
+  </div>
+</section>
+
+<!-- ================= DEEL IV ================= -->
+<section class="stage" id="deel4">
+  <div class="medal" aria-hidden="true">IV</div>
+  <div class="stage-head">
+    <p class="kicker">Deel 4 · Cultuur- en gastronomieroute</p>
+    <h2>Het vasteland naar het Zuiden</h2>
+    <p class="stage-route">Civitavecchia <span class="sep">➔</span> Sperlonga <span class="sep">➔</span> Pompeï &amp; Vesuvius <span class="sep">➔</span> Amalfikust (per boot) <span class="sep">➔</span> Paestum <span class="sep">➔</span> Cilento &amp; Maratea <span class="sep">➔</span> Scilla &amp; Tropea <span class="sep">➔</span> pendelboot Villa San Giovanni</p>
+  </div>
+
+  <article class="place">
+    <h3>Sperlonga</h3>
+    <p class="sub">Lazio · sneeuwwit stadje op de rots</p>
+    <ul>
+      <li>Een van de mooiste kustdorpjes van Midden-Italië: smalle steegjes, doorkijkjes naar zee, bloemrijke trappen.</li>
+      <li><b>Grotte di Tiberio:</b> keizer Tiberius bouwde in de 1e eeuw een zomervilla rond een natuurlijke zeegrot, met reusachtige marmeren Odyssee-beelden — nu te zien in het bijbehorende museum.</li>
+      <li><span class="klabel">Praktisch:</span> camper op Parking Sperlonga aan de kustweg; met de e-bikes naar het centrum en de grot.</li>
+    </ul>
+    <div class="chips"><span class="chip">🏛 keizervilla</span><span class="chip">🚲 e-bike naar het centrum</span></div>
+  </article>
+
+  <article class="place">
+    <h3>Pompeï, Herculaneum &amp; de Vesuvius</h3>
+    <p class="sub">Campanië · eind september ± 24–25 °C · ontdeknapels.nl (Nederlandstalig)</p>
+    <ul>
+      <li><b>Herculaneum naast (of in plaats van) Pompeï:</b> bedolven onder hete modder in plaats van as, waardoor houtwerk — vloeren, bedden, kasten — en zelfs kleding wonderbaarlijk bewaard bleven.</li>
+      <li><b>Vesuvius-krater:</b> met de shuttlebus omhoog, laatste stuk over lavagruis wandelen naar de kraterrand (±1.200 m) — uitzicht over de hele Baai van Napels.</li>
+      <li><span class="klabel">Standplaats:</span> Camping Zeus in Pompeï — direct naast de ingang van de opgravingen én het treinstation.</li>
+      <li><span class="klabel">Kookworkshop optie 2:</span> Napolitaanse pizza uit de houtoven in Sorrento, óf verse pasta + Mozzarella di Bufala bij een agriturismo rond Paestum.</li>
+    </ul>
+    <div class="chips"><span class="chip">🌋 kraterrand</span><span class="chip">🚐 camping naast de opgravingen</span><span class="chip">🍳 pizza-workshop</span></div>
+  </article>
+
+  <article class="place">
+    <h3>De Amalfikust — per passagiersboot</h3>
+    <p class="sub">Sorrento / Salerno</p>
+    <ul>
+      <li>⚠ Met een camper van 7 meter is de smalle kustweg SS163 <b>strikt verboden</b> en een verkeersnachtmerrie.</li>
+      <li>✅ <b>De oplossing:</b> Carado veilig op de camping in Sorrento of Salerno; vanaf de haven met de snelle passagiersboot. Vanaf het water het allermooiste panorama op Positano en Amalfi — zonder één seconde verkeersstress.</li>
+    </ul>
+    <div class="chips"><span class="chip">⛴ mooiste zicht vanaf zee</span><span class="chip">🚫 SS163 camper-verbod</span></div>
+  </article>
+
+  <article class="place">
+    <h3>Paestum</h3>
+    <p class="sub">Griekse tempels &amp; verse buffelmozzarella (SS18)</p>
+    <ul>
+      <li><b>Drie Dorische tempels</b> (rond 550 v.Chr.) — van de best bewaarde ter wereld, tussen schaduwrijke dennen; heerlijk ruim en rustig wandelen.</li>
+      <li><b>Azienda Agricola Barlotti:</b> beroemde buffelboerderij vlak buiten de opgravingen — lunch met kraakverse Mozzarella di Bufala Campana DOP, buffel-ricotta en buffel-ijs.</li>
+    </ul>
+    <div class="chips"><span class="chip">🏛 550 v.Chr.</span><span class="chip">🧀 mozzarella-lunch</span></div>
+  </article>
+
+  <article class="place">
+    <h3>Cilento &amp; Maratea</h3>
+    <p class="sub">Het ongerepte broertje van de Amalfikust</p>
+    <ul>
+      <li><b>Acciaroli:</b> vissersdorp waar Hemingway graag kwam — en waar opvallend veel inwoners ouder dan 100 worden (mediterraan dieet!).</li>
+      <li><b>Statua del Redentore (Maratea):</b> het 21 meter hoge marmeren Christusbeeld op Monte San Biagio, met uitzicht over de hele Golf van Policastro.</li>
+    </ul>
+    <div class="chips"><span class="chip">🐟 vissersdorpen</span><span class="chip">⛰ Christusbeeld 21 m</span></div>
+  </article>
+
+  <article class="place">
+    <h3>Kust van de Goden: Tropea &amp; Scilla</h3>
+    <p class="sub">Calabrië · Costa degli Dei</p>
+    <ul>
+      <li><b>Tropea:</b> gebouwd op een steile zandsteenrots boven het witte strand; beroemd om de zoete rode ui (<em>Cipolla Rossa di Tropea</em>).</li>
+      <li>🎬 Tropea en het visserswijkje <b>Chianalea di Scilla</b> (waar de golven tegen de achtergevels klotsen) ademen de sfeer van <em>The Equalizer 3</em>.</li>
+      <li><span class="klabel">Oversteek:</span> vanaf Scilla 10 minuten naar Villa San Giovanni — pendelboot van Caronte &amp; Tourist, 20 minuten over de Straat van Messina naar Sicilië.</li>
+    </ul>
+    <div class="chips"><span class="chip">🧅 cipolla rossa</span><span class="chip">⛴ 20 min naar Sicilië</span></div>
+  </article>
+
+  <div class="tip">
+    <p class="tip-label">💡 Extra suggestie uit onderzoek — kaartjes Pompeï en het combi-ticket</p>
+    <p>Pompeï werkt inmiddels met een dagmaximum van 20.000 bezoekers en <b>persoonlijke tickets met tijdslot</b> (ochtend 9:00–13:00 of middag 13:00–17:30). Koop ongeveer een week vooruit via de officiële site pompeiisites.org; het standaardticket kost € 20.</p>
+    <p>Slimste keuze voor jullie: het <b>combi-ticket Pompeï + Herculaneum</b> voor circa € 22, geldig 48 uur — precies passend bij het plan om beide te doen.</p>
+    <p>Eén valkuil: de eerste zondag van de maand (in 2026 valt dat op <b>4 oktober</b>) is de toegang tot alle staatssites gratis, óók Paestum. Klinkt aantrekkelijk, maar je kunt dan niet vooruit boeken, de rijen zijn lang en het aantal plaatsen is beperkt. Met een strak reisschema is die € 20 het waard om de dag zelf in de hand te houden.</p>
+    <p class="src">Bronnen: <a href="https://untolditaly.com/how-to-buy-tickets-for-pompeii/">Untold Italy — tickets Pompeï</a> · <a href="https://pompeiicity.com/en/herculaneum/tickets">Herculaneum — tickets</a></p>
+  </div>
+
+  <div class="tip">
+    <p class="tip-label">⚠ Let op — het camperverbod op de SS163 is nog strenger dan gedacht</p>
+    <p>Jullie conclusie over de Amalfikust is helemaal juist, maar de regel is nóg absoluter: ANAS-verordening 337/2019 verbiedt <b>alle</b> campers en caravans op de SS163 tussen Vietri sul Mare en Positano, in beide richtingen, van 06:30 tot 24:00 uur — <b>ongeacht de lengte</b>. Dus niet alleen vanwege de 7 meter. Niet aan beginnen.</p>
+    <p>Het plan met de passagiersboot werkt in oktober nog: <b>Travelmar</b> vaart Salerno → Amalfi (±40 min) en Positano (±75 min) van april tot eind oktober. Twee waarschuwingen: de herfstdienstregeling is uitgedund, en bij ruwe zee worden afvaarten op korte termijn geschrapt. Check travelmar.it dus een dag vooraf, plan de laatste terugboot niet te krap, en houd de SITA-bus als achterdeur.</p>
+    <p class="src">Bronnen: <a href="https://distrettocostadamalfi.it/wp-content/uploads/2025/04/Traffic-Regulation-Amalfi-Coast-Agg.-to-2025-12-04-2025.pdf">Verkeersreglement Amalfikust (pdf)</a> · <a href="https://www.travelmar.it/en/timetable">Travelmar — dienstregeling</a></p>
+  </div>
+
+  <div class="tip">
+    <p class="tip-label">💡 Extra suggestie uit onderzoek — Certosa di Padula, tussen Cilento en Maratea</p>
+    <p>Vlak langs de A2 op de etappe Cilento → Maratea ligt de <b>Certosa di Padula</b>, het grootste kartuizerklooster van Italië en UNESCO-werelderfgoed, met het grootste kloosterhof ter wereld. Open van ongeveer 9:00 tot 19:30, <b>dinsdag gesloten</b>, reken op een uur. Een verrassend rustige, indrukwekkende stop op een dag die anders vooral rijden is.</p>
+    <p class="src">Bron: <a href="https://www.summerinitaly.com/guide/the-charterhouse-of-padula">Summer in Italy — Certosa di Padula</a></p>
+  </div>
+</section>
+
+<!-- ================= DEEL V ================= -->
+<section class="stage" id="deel5">
+  <div class="medal" aria-hidden="true">V</div>
+  <div class="stage-head">
+    <p class="kicker">Deel 5 · 10–12 dagen rond het eiland</p>
+    <h2>De kust- en cultuurronde op Sicilië</h2>
+    <p class="stage-route">Messina <span class="sep">➔</span> Taormina &amp; Etna <span class="sep">➔</span> Syracuse &amp; Ortigia <span class="sep">➔</span> Barokvallei <span class="sep">➔</span> Scala dei Turchi &amp; Sciacca <span class="sep">➔</span> Marsala <span class="sep">➔</span> Trapani &amp; Erice <span class="sep">➔</span> Cefalù <span class="sep">➔</span> Milazzo (Stromboli) <span class="sep">➔</span> Messina</p>
+  </div>
+
+  <article class="place">
+    <h3>Taormina &amp; de Etna</h3>
+    <p class="sub">De mondaine 'Parel van Sicilië'</p>
+    <ul>
+      <li><b>Teatro Antico:</b> Grieks-Romeins theater (3e eeuw v.Chr.); het uitzicht door de gebroken zuilen op zee én de rokende Etna is wereldberoemd.</li>
+      <li>🎬 In bergdorp <b>Savoca</b>: Bar Vitelli, waar Michael Corleone in <em>The Godfather</em> om de hand van Apollonia vraagt; ook Forza d'Agrò is een Godfather-dorp.</li>
+      <li><span class="klabel">Etna-dag:</span> met de Carado naar Rifugio Ragabo / Piano Provenzana (rustige noordzijde). André rijdt de legendarische <b>Pista Altomontana</b> — onverharde droomroute over zwarte lavavelden op 1.700–2.000 m — terwijl Tineke wandelt door de dennenbossen van de Pineta Ragabo.</li>
+      <li><span class="klabel">Kookworkshop optie 3:</span> op een wijngoed op de vulkaanhellingen <em>arancini</em> bakken en verse <em>cannoli</em> vullen met schapenricotta en pistache.</li>
+    </ul>
+    <div class="chips"><span class="chip">🚲 gravel op lavavelden</span><span class="chip">🎬 The Godfather</span><span class="chip">🍳 arancini &amp; cannoli</span></div>
+  </article>
+
+  <article class="place">
+    <h3>Syracuse, Ortigia &amp; de Barokvallei</h3>
+    <p class="sub">Machtiger dan Athene, in de klassieke oudheid</p>
+    <ul>
+      <li><b>Piazza del Duomo (Ortigia):</b> de kathedraal is óver een Griekse Athene-tempel heen gebouwd — zuilen uit 500 v.Chr. staan in de buitenmuren gemetseld.</li>
+      <li>🎬 Het plein schittert in <em>Malèna</em> en in de achtervolgingsscène van <em>Indiana Jones and the Dial of Destiny</em>.</li>
+      <li><b>Val di Noto:</b> olijfgaarden van Tenuta Cavasecca in Noto (biologische Tonda Iblea-olijf); in <b>Modica</b> de ambachtelijke, koudgemalen 'Azteekse' chocolade proeven.</li>
+      <li><span class="klabel">Praktisch:</span> overnachten op Area Sosta Camper Paradiso — te voet de brug over naar Ortigia.</li>
+    </ul>
+    <div class="chips"><span class="chip">🏛 tempel in de kathedraal</span><span class="chip">🍫 Modica-chocolade</span></div>
+  </article>
+
+  <article class="place">
+    <h3>Zuidwestkust: Scala dei Turchi, Sciacca &amp; Marsala</h3>
+    <p class="sub">Kalkrotsen, keramiek en zoutpannen</p>
+    <ul>
+      <li><b>Scala dei Turchi:</b> de sneeuwwitte kalkrots die als natuurlijke trap in zee afdaalt. Camper ruim parkeren op Area Sosta Mansueto; met de fietsen het laatste stuk naar de Belvedere en het strand.</li>
+      <li><b>Sciacca:</b> authentieke vissersstad — trappen vol handbeschilderde keramiek, en buiten de stad het betoverende beeldenbos <em>Castello Incantato</em>.</li>
+      <li><b>Saline di Marsala:</b> roze glinsterende zoutpannen met historische Hollandse windmolens; stop bij een cantina voor een proeverij van de beroemde likeurwijn Marsala.</li>
+    </ul>
+    <div class="chips"><span class="chip">🚲 fiets naar de Scala</span><span class="chip">🍷 Marsala-proeverij</span></div>
+  </article>
+
+  <article class="place">
+    <h3>Trapani, Erice, Cefalù &amp; Milazzo</h3>
+    <p class="sub">Het westen en noorden</p>
+    <ul>
+      <li><b>Erice:</b> middeleeuws vestingstadje op 750 m boven zee. Overnachten bij Area Sosta L'Azienda in Trapani en met de kabelbaan (<em>Funivia</em>) omhoog; boven kasteeltuinen en traditionele <em>couscous di pesce</em>.</li>
+      <li>Over de A29/A20 'bovenlangs' Palermo naar kuststadje <b>Cefalù</b> en keramiekdorp Santo Stefano di Camastra.</li>
+      <li>🌋 <b>Excursie-highlight Stromboli:</b> camper bewaakt bij de haven van Milazzo; 's middags per excursieboot naar het Eolische eiland. Na een wandeling door het autovrije witte dorpje vaart de boot rond zonsondergang naar de <em>Sciara del Fuoco</em> — gloeiend rode lava-explosies tegen de nachthemel!</li>
+    </ul>
+    <div class="chips"><span class="chip">🚡 kabelbaan Erice</span><span class="chip">🌋 lava bij zonsondergang</span></div>
+  </article>
+
+  <article class="place">
+    <h3>Messina — culturele tussenstop</h3>
+    <p class="sub">Vóór de oversteek terug</p>
+    <ul>
+      <li><b>Het mechanische uurwerk:</b> om 12:00 precies komt het grootste mechanische uurwerk ter wereld in de klokkentoren van de Duomo 12 minuten tot leven — met brullende leeuwen en kraaiende haantjes.</li>
+      <li>Afsluiten met een traditionele <em>granita al caffè con panna</em> bij Pasticceria Irrera, en dan de klep op van de pendelboot terug naar het vasteland.</li>
+    </ul>
+    <div class="chips"><span class="chip">🕰 12:00 uur stipt</span><span class="chip">🍧 granita</span></div>
+  </article>
+
+  <div class="tip">
+    <p class="tip-label">💡 Extra suggestie uit onderzoek — Ottobrata Zafferanese: elke zondag in oktober</p>
+    <p>In <b>Zafferana Etnea</b>, zo'n 20 minuten van jullie Etna-standplaats, loopt sinds 1971 de <em>Ottobrata</em>: elke zondag in oktober staat een ander oogstproduct centraal — druiven (1e zondag), honing (2e), Etna-appels (3e) en champignons en kastanjes (4e) — met markten, volksmuziek en proeverijen. Een perfecte e-bike-bestemming over de lagere hellingen van de Etna, en een mooie tegenhanger van de gravelroute over de lavavelden.</p>
+    <p>In het verlengde daarvan: begin oktober wordt op de hoge Etna-hellingen de late <b>Nerello Mascalese</b> geoogst. Dit is een van de weinige Italiaanse streken waar jullie midden in de <em>vendemmia</em> vallen — pickers in de wijngaarden, kelders in bedrijf, mild weer. Boek ongeveer twee weken vooruit, want wijnhuizen geven tijdens de oogst prioriteit aan het werk. In Marsala kun je dat later aanvullen met een kelderbezoek bij het historische Cantine Florio.</p>
+    <p class="src">Bronnen: <a href="https://www.scent-of-sicily.com/news/festival-etna-typical-products/">Scent of Sicily — Etna-oogstfeesten</a> · <a href="https://www.sicilyactive.com/en/etna-wine-region-guide">Sicily Active — Etna-wijngebied</a></p>
+  </div>
+
+  <div class="tip">
+    <p class="tip-label">💡 Extra suggestie uit onderzoek — twee toevoegingen aan de Sicilië-ronde</p>
+    <p><b>Villa Romana del Casale bij Piazza Armerina</b> (UNESCO, circa 1,5 uur landinwaarts omrijden tussen Noto en de zuidkust): 3.500 m² van de best bewaarde Romeinse mozaïeken ter wereld, inclusief de beroemde 'bikinimeisjes' en de Grote Jacht. Reken op twee uur. Als jullie na Ravenna nog mozaïeken willen zien: dit is de Romeinse pendant ervan.</p>
+    <p><b>Riserva dello Zingaro</b> (tussen Scopello en San Vito lo Capo, bij Trapani): 7 kilometer autovrij kustpad langs zeven zwembare baaitjes. Ga naar binnen via de rustiger kant bij Scopello, met de Tonnara di Scopello als stop. In oktober open van 8:00 tot 16:00, het water is nog prima en er bloeit nog van alles.</p>
+    <p>En als jullie Sicilië-etappe eind september begint: de <b>Cous Cous Fest in San Vito lo Capo</b> loopt van 18 tot 27 september 2026, met het wereldkampioenschap couscous, kookshows en gratis strandconcerten. San Vito ligt een uur van Trapani, naast Zingaro. Vallen jullie data er net buiten, houd er dan toch rekening mee: die week is het in de hele regio druk en zijn camperplekken schaars.</p>
+    <p class="src">Bronnen: <a href="https://www.italia.it/en/sicily/things-to-do/villa-romana-del-casale">Italia.it — Villa Romana del Casale</a> · <a href="https://www.alongdustyroads.com/posts/zingaro-nature-reserve-hike">Along Dusty Roads — Zingaro</a> · <a href="https://couscousfest.it/en/">Cous Cous Fest</a></p>
+  </div>
+</section>
+
+<!-- ================= DEEL VI ================= -->
+<section class="stage" id="deel6">
+  <div class="medal" aria-hidden="true">VI</div>
+  <div class="stage-head">
+    <p class="kicker">Deel 6 · Basilicata &amp; Puglia</p>
+    <h2>Matera, Salento &amp; de Valle d'Itria</h2>
+    <p class="stage-route">Villa San Giovanni <span class="sep">➔</span> Matera <span class="sep">➔</span> Altamura <span class="sep">➔</span> Lecce <span class="sep">➔</span> Brindisi <span class="sep">➔</span> Ostuni &amp; Alberobello <span class="sep">➔</span> Bari</p>
+  </div>
+
+  <article class="place">
+    <h3>Matera</h3>
+    <p class="sub">De rotsstad · via SS534 / SS106 door de sinaasappelgaarden van Sibari</p>
+    <ul>
+      <li><b>De Sassi:</b> een van de oudste continu bewoonde steden ter wereld — duizenden grotwoningen, rotskerken en ondergrondse reservoirs in de ravijnwanden.</li>
+      <li>🎬 Decor van de openingsscène van <em>No Time to Die</em> (de Aston Martin DB5 door de kalksteegjes).</li>
+      <li><span class="klabel">Praktisch:</span> Area Camper Matera, met shuttleservice rechtstreeks naar het historische centrum.</li>
+    </ul>
+    <div class="chips"><span class="chip">🏘 Sassi</span><span class="chip">🎬 James Bond</span><span class="chip">🚐 shuttle naar centrum</span></div>
+  </article>
+
+  <article class="place">
+    <h3>Altamura ➔ Lecce</h3>
+    <p class="sub">De broodhoofdstad &amp; het 'Athene van het Zuiden'</p>
+    <ul>
+      <li><b>Altamura:</b> beroemd om <em>Pane di Altamura DOP</em> — het enige brood in Europa met beschermde oorsprongsbenaming. Haal warm brood en focaccia barese bij <b>Antico Forno Santa Caterina</b> (houtoven in gebruik sinds 1391!) en bezoek de keizerlijke kathedraal van Frederik II. Ruim parkeren aan de Viale Martiri.</li>
+      <li><b>Lecce:</b> uitbundige barok in goudgele <em>pietra leccese</em> — Basilica di Santa Croce, Piazza del Duomo, Romeins amfitheater. Overnachten bij Area Camper Lecce.</li>
+      <li><span class="klabel">Culinair in Lecce:</span> een <em>caffè leccese</em> (iced espresso met amandelmelk) met een warm <em>pasticciotto</em> op een zonnig terras.</li>
+    </ul>
+    <div class="chips"><span class="chip">🍞 houtoven uit 1391</span><span class="chip">☕ caffè leccese</span></div>
+  </article>
+
+  <article class="place">
+    <h3>Brindisi</h3>
+    <p class="sub">Eindpunt van de antieke Via Appia</p>
+    <ul>
+      <li>Wandel over de zeepromenade Regina Margherita naar de <b>Colonne Romane</b> — de marmeren zuil die het officiële eindpunt markeert van de Via Appia, helemaal vanuit Rome.</li>
+      <li>Onderweg: de wijngaarden van <em>Primitivo di Manduria</em> en <em>Salice Salentino</em>.</li>
+    </ul>
+    <div class="chips"><span class="chip">🏛 Via Appia</span><span class="chip">🍷 Primitivo</span></div>
+  </article>
+
+  <article class="place">
+    <h3>Ostuni, Alberobello &amp; Bari Vecchia</h3>
+    <p class="sub">De sprookjesachtige Valle d'Itria</p>
+    <ul>
+      <li><b>Ostuni</b> — 'La Città Bianca': dwalen door sneeuwwitte steegjes; bij een lokale <em>masseria</em> biologische olijfolie van de sterke Coratina-olijf inslaan.</li>
+      <li><b>Alberobello:</b> het hart van de <em>trulli</em> — slenteren door Rione Monti en Aia Piccola. Overnachten op Area Sosta Nel Verde, op wandelafstand.</li>
+      <li><b>Bari Vecchia:</b> in de Strada Arco Basso rollen de 'pasta-oma's' dagelijks met de hand duizenden <em>orecchiette</em>; daarna knapperige focaccia bij de eeuwenoude bakkerij Panificio Fiore.</li>
+      <li><span class="klabel">Kookworkshop optie 4:</span> op een historische <em>masseria</em> bij een lokale boerin zelf orecchiette en focaccia barese leren maken.</li>
+    </ul>
+    <div class="chips"><span class="chip">🛖 trulli</span><span class="chip">🍝 pasta-oma's</span><span class="chip">🍳 orecchiette-workshop</span></div>
+  </article>
+
+  <div class="tip">
+    <p class="tip-label">💡 Extra suggestie uit onderzoek — Cripta del Peccato Originale bij Matera</p>
+    <p>Zeven kilometer zuidelijk van Matera ligt de <b>Cripta del Peccato Originale</b>, een 8e/9e-eeuwse grotkerk met fresco's die de 'Sixtijnse Kapel van de rotskunst' wordt genoemd. Alleen te bezoeken <b>op reservering via internet</b>, in kleine groepjes van maximaal acht personen; je meldt je 30 minuten vóór je tijdslot bij het ticketkantoor van Azienda Agricola Dragone. Boeken via criptadelpeccatooriginale.it. Combineert uitstekend met een klassieke Sassi-wandeling met gids en een <em>casa grotta</em> (grotwoning, ongeveer € 5).</p>
+    <p class="src">Bronnen: <a href="https://criptadelpeccatooriginale.it/">Cripta del Peccato Originale — reserveren</a> · <a href="https://www.getyourguide.com/sassi-di-matera-l89408/">Sassi di Matera — rondleidingen</a></p>
+  </div>
+
+  <div class="tip">
+    <p class="tip-label">💡 Extra suggestie uit onderzoek — oktober is <em>raccolta</em>: de olijfoogst bij Ostuni</p>
+    <p>Jullie timing is hier goud waard. Half oktober begint precies de olijfoogst op de vlakte tussen Ostuni en Fasano — dus in plaats van alleen olijfolie kopen, kun je de persing zien én de peperige <em>olio nuovo</em> proeven, de nieuwe olie die vaak nog niet eens gebotteld is.</p>
+    <p>Twee mooie adressen doen rondleidingen van ongeveer anderhalf uur met proeverij (circa € 20–45 per persoon): <b>Masseria Brancati</b>, met duizendjarige olijfbomen en een ondergrondse frantoio uit de Romeinse tijd, en <b>Masseria Il Frantoio</b>, biologisch en online te boeken. Reserveer een dag of twee vooruit.</p>
+    <p>En op de etappe Brindisi → Lecce ligt een omweggetje van 30–40 minuten naar <b>Produttori Vini di Manduria</b>, de oudste wijncoöperatie van Puglia (1932): kelderbezoek, het Museum van de Primitivo-cultuur in de oude ondergrondse cisternen, en een proeverij van vier wijnen met streekhapjes onder leiding van een sommelier. Open maandag tot zaterdag en zondagochtend, op reservering.</p>
+    <p class="src">Bronnen: <a href="https://www.masseriailfrantoio.it/en/typical-apulian-food/tasting">Masseria Il Frantoio — proeverijen</a> · <a href="https://www.produttoridimanduria.it/visit-the-winery/?lang=en">Produttori Vini di Manduria</a></p>
+  </div>
+
+  <div class="tip">
+    <p class="tip-label">💡 Extra suggestie uit onderzoek — Gravina in Puglia, de Bond-brug</p>
+    <p>Op 25 minuten van Altamura, tussen Matera en de kust, ligt <b>Gravina in Puglia</b>. Daar loopt de <em>Ponte Acquedotto</em> 37 meter hoog over het ravijn — precies de brug waar Bond in <em>No Time to Die</em> vanaf springt. Een mooie aanvulling op de Matera-scène uit dezelfde film. Gratis, en je parkeert aan de overzijde van het ravijn. De oude stad zelf is bovendien opvallend toeristenvrij.</p>
+    <p>Alternatief in dezelfde hoek: de <b>Grotte di Castellana</b> bij Alberobello — de volledige tour van 3 kilometer kost € 16 en duurt ongeveer twee uur, in oktober open van 9:00 tot 18:00. Kaartjes alleen aan de kassa op de dag zelf.</p>
+    <p class="src">Bronnen: <a href="https://www.lovetravelplanning.com/in-search-of-james-bond-in-matera-and-gravina-in-puglia/">Bond-locaties in Matera en Gravina</a> · <a href="https://en.grottedicastellana.it/information/timetables-and-prices/">Grotte di Castellana — tijden en prijzen</a></p>
+  </div>
+</section>
+
+<!-- ================= DEEL VII ================= -->
+<section class="stage" id="deel7">
+  <div class="medal" aria-hidden="true">VII</div>
+  <div class="stage-head">
+    <p class="kicker">Deel 7 · A14 Autostrada Adriatica</p>
+    <h2>De Adriatische terugreis</h2>
+    <p class="stage-route">Bari <span class="sep">➔</span> Polignano a Mare &amp; Trani <span class="sep">➔</span> San Marino <span class="sep">➔</span> Ravenna <span class="sep">➔</span> Gardameer (Sirmione) <span class="sep">➔</span> CVD Driel · 16 oktober 2026</p>
+  </div>
+
+  <article class="place">
+    <h3>Kustparels: Polignano a Mare &amp; Trani</h3>
+    <p class="sub">Puglia's Adriatische kant</p>
+    <ul>
+      <li><b>Polignano a Mare:</b> strandbaai <em>Cala Porto</em> tussen 20 m hoge witte kliffen — bekend van Red Bull Cliff Diving én als geboortehuis van Domenico Modugno (<em>Volare</em>!).</li>
+      <li><b>Trani:</b> de sprookjesachtige witte kathedraal van San Nicola Pellegrino, die direct aan het zeewater op de kade staat.</li>
+    </ul>
+    <div class="chips"><span class="chip">🤿 cliff diving-baai</span><span class="chip">⛪ kathedraal aan zee</span></div>
+  </article>
+
+  <article class="place">
+    <h3>San Marino &amp; Ravenna</h3>
+    <p class="sub">Dwergstaat &amp; Byzantijnse mozaïeken</p>
+    <ul>
+      <li><b>San Marino:</b> de oudste republiek ter wereld — camper onderaan de berg, kabelbaan naar de top van Monte Titano en wandelen langs de drie vestingtorens.</li>
+      <li><b>Ravenna (UNESCO):</b> Basilica di San Vitale en het Mausoleo di Galla Placidia — de best bewaarde 5e/6e-eeuwse Byzantijnse mozaïeken ter wereld.</li>
+    </ul>
+    <div class="chips"><span class="chip">🚡 Monte Titano</span><span class="chip">✨ mozaïeken</span></div>
+  </article>
+
+  <article class="place">
+    <h3>Gardameer &amp; thuis</h3>
+    <p class="sub">Sirmione · 15–16 oktober</p>
+    <ul>
+      <li><b>Sirmione:</b> laatste overnachting aan de zuidoever — over de ophaalbrug langs waterslot <em>Rocca Scaligera</em>, laatste Italiaanse espresso aan de kade.</li>
+      <li>Over de Alpen via Zwitserland/Oostenrijk; donderdag 15 oktober Gelderland binnen.</li>
+      <li>🏁 <b>Vrijdag 16 oktober 2026:</b> de Carado T337 — vol herinneringen, olijfolie en Italiaanse lekkernijen — keurig inleveren bij CVD Driel. De cirkel van ruim 7.000 km is rond!</li>
+    </ul>
+    <div class="chips"><span class="chip">🏰 Rocca Scaligera</span><span class="chip">🏁 finish</span></div>
+  </article>
+
+  <div class="tip">
+    <p class="tip-label">💡 Extra suggestie uit onderzoek — de laatste avond in Sirmione</p>
+    <p>Twee dingen om de reis mee af te sluiten. De <b>Grotte di Catullo</b> — de ruïnes van een Romeinse villa op de punt van het schiereiland, met uitzicht over het meer — sluiten in oktober om ongeveer 18:30, met de laatste toegang een uur eerder, en zijn <b>maandag gesloten</b>.</p>
+    <p>En dan de mooiste manier om 7.000 kilometer camperrijden uit de benen te laten lopen: het <b>buitenbad met thermaal water van Aquaria</b>, aan het meer, open tot ongeveer 22:00 uur (en tot middernacht op vrijdag en zaterdag). In de koele oktoberlucht is dat precies goed. Reserveer wel als jullie in het weekend aankomen.</p>
+    <p class="src">Bronnen: <a href="https://www.termedisirmione.com/en/spathermalgarden/">Terme di Sirmione — Aquaria</a> · <a href="https://tourismattractions.net/italy/sirmione-attractions-opening-hours">Openingstijden Sirmione</a></p>
+  </div>
+</section>
+
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="fin">Buon viaggio, André &amp; Tineke!</p>
+    <p>Samengesteld uit het originele reisboek 'Het Grote Najaarsavontuur 2026'. De blauwe kaders zijn extra suggesties uit online onderzoek (augustus 2026) — controleer openingstijden en dienstregelingen kort voor vertrek.</p>
+  </div>
+</footer>
+
+</body>
+</html>
