@@ -14,7 +14,12 @@ de SS163, de ZTL-camera's, en de olijfoogst bij Ostuni.
 
 - `index.html` — de complete website. Eén bestand, geen build, geen dependencies.
   Werkt in lichte en donkere modus en op mobiel.
-- `.nojekyll` — zodat GitHub Pages het bestand ongewijzigd serveert.
+- `img/` — 21 sfeerfoto's, verdeeld over de acht etappes (twee tot drie per deel).
+  Allemaal van Wikimedia Commons en vrij te gebruiken (Creative Commons of CC0);
+  fotograaf en licentie staan in de bijschriften, en de foto zelf linkt naar de
+  bestandspagina op Commons. Opgeslagen als JPEG van 1200 px breed (samen ±4,5 MB)
+  en met `loading="lazy"`, dus de browser haalt alleen op wat je ook echt bekijkt.
+- `.nojekyll` — zodat GitHub Pages de bestanden ongewijzigd serveert.
 
 ## Publiceren via GitHub Pages
 
@@ -34,3 +39,9 @@ Alles zit in dat ene HTML-bestand: de kleuren en fonts bovenaan in het `<style>`
 (als CSS-variabelen), daaronder de zeven etappes als `<section class="stage">`.
 Een plaats toevoegen is een `<article class="place">` bijplakken; een tip toevoegen
 een `<div class="tip">`.
+
+Een foto toevoegen gaat net zo: zet het bestand in `img/` en plak een
+`<figure class="shot">` bij in de `<div class="gallery">` van die etappe. De galerij
+schaalt zelf mee — drie foto's naast elkaar op een breed scherm, twee op een tablet,
+één op de telefoon. Vermeld in het bijschrift altijd fotograaf en licentie, en laat de
+foto linken naar de bronpagina; dat is bij Creative Commons-foto's ook verplicht.
