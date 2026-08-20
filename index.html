@@ -231,6 +231,62 @@ h2{
   color:var(--sea);
 }
 
+/* ---------- Sfeerbeelden ---------- */
+.shots{margin:16px 0 20px}
+.shots-label{
+  font-family:"Archivo",system-ui,sans-serif;
+  font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--gold);
+  margin:0 0 10px;
+}
+.gallery{
+  display:grid;
+  gap:12px;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+}
+figure.shot{
+  margin:0;
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:12px;
+  box-shadow:var(--shadow);
+}
+/* Alleen de fotolink (het directe kind) rondt af en snijdt af — niet de
+   licentielink in het bijschrift, en niet de figure zelf: zo kan een langer
+   bijschrift nooit worden weggeknipt. */
+figure.shot > a{
+  display:block;
+  line-height:0;
+  overflow:hidden;
+  border-radius:11px 11px 0 0;
+}
+figure.shot img{
+  display:block;
+  width:100%;
+  height:auto;           /* anders winnen de width/height-attributen van aspect-ratio */
+  aspect-ratio:4/3;
+  object-fit:cover;
+  background:var(--chip-bg);
+  transition:transform 420ms ease;
+}
+figure.shot > a:hover img,figure.shot > a:focus-visible img{transform:scale(1.035)}
+@media (prefers-reduced-motion: reduce){
+  figure.shot img{transition:none}
+  figure.shot > a:hover img,figure.shot > a:focus-visible img{transform:none}
+}
+figure.shot figcaption{
+  font-family:"Archivo",system-ui,sans-serif;
+  font-size:.78rem;line-height:1.5;
+  padding:10px 13px 11px;
+}
+figure.shot .credit{
+  display:block;margin-top:5px;
+  font-size:.68rem;line-height:1.5;
+  color:var(--muted);
+}
+figure.shot .credit a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line)}
+figure.shot .credit a:hover{color:var(--sea);border-color:var(--sea)}
+
 /* ---------- Onderzoeks-tips ---------- */
 .tip{
   background:var(--tip-bg);
@@ -694,6 +750,30 @@ footer .fin{
     <p class="stage-route">Bennekom <span class="sep">➔</span> CVD Driel (camper ophalen) <span class="sep">➔</span> Diekirch <span class="sep">➔</span> dag 2: Vianden <span class="sep">➔</span> dag 3: Müllerthal <span class="sep">➔</span> dag 4: doorreis</p>
   </div>
 
+  <div class="shots">
+    <p class="shots-label">📷 Sfeerbeeld — Luxemburgse Ardennen</p>
+    <div class="gallery">
+      <figure class="shot">
+        <a href="https://commons.wikimedia.org/wiki/File:20200829_Vianden_castle_03.jpg" target="_blank" rel="noopener">
+          <img src="img/vianden.jpg" width="1200" height="801" loading="lazy" decoding="async"
+               alt="Het kasteel van Vianden op een beboste rots, met bloeiende rozen op de voorgrond">
+        </a>
+        <figcaption>Château de Vianden, hoog boven de vallei van de Our
+          <span class="credit">Foto: Flocci Nivis · <a href="https://creativecommons.org/licenses/by/4.0" target="_blank" rel="noopener">CC BY 4.0</a></span>
+        </figcaption>
+      </figure>
+      <figure class="shot">
+        <a href="https://commons.wikimedia.org/wiki/File:Waldbillig_(LU),_Schiessent%C3%BCmpel_--_2015_--_6022.jpg" target="_blank" rel="noopener">
+          <img src="img/muellerthal.jpg" width="1200" height="800" loading="lazy" decoding="async"
+               alt="De Schiessentümpel: een watervalletje over mosbedekte rotsen met een houten brugje erboven">
+        </a>
+        <figcaption>De Schiessentümpel met zijn houten brugje in het Müllerthal
+          <span class="credit">Foto: Dietmar Rabich · <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a></span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+
   <article class="place">
     <h3>Diekirch</h3>
     <p class="sub">Standplaats &amp; historie — Camping de la Sûre</p>
@@ -746,6 +826,30 @@ footer .fin{
     <p class="stage-route">Twee nachten om de rit naar Zuid-Tirol relaxt op te breken</p>
   </div>
 
+  <div class="shots">
+    <p class="shots-label">📷 Sfeerbeeld — Zuid-Duitsland aan het water</p>
+    <div class="gallery">
+      <figure class="shot">
+        <a href="https://commons.wikimedia.org/wiki/File:Lindau_Insel_Luftbild3.jpg" target="_blank" rel="noopener">
+          <img src="img/lindau.jpg" width="1200" height="811" loading="lazy" decoding="async"
+               alt="Luchtfoto van het eiland Lindau in de Bodensee met de Alpen op de achtergrond">
+        </a>
+        <figcaption>De eilandstad Lindau in de Bodensee, met de Alpen erachter
+          <span class="credit">Foto: Edda Praefcke · <a href="https://creativecommons.org/licenses/by/2.5" target="_blank" rel="noopener">CC BY 2.5</a></span>
+        </figcaption>
+      </figure>
+      <figure class="shot">
+        <a href="https://commons.wikimedia.org/wiki/File:Schloss_Neuschwanstein_2013.jpg" target="_blank" rel="noopener">
+          <img src="img/neuschwanstein.jpg" width="1200" height="897" loading="lazy" decoding="async"
+               alt="Slot Neuschwanstein op een met bos bedekte heuvel, met de Allgäuer vlakte erachter">
+        </a>
+        <figcaption>Schloss Neuschwanstein bij Füssen — vanaf Camping Brunnen in zicht
+          <span class="credit">Foto: Thomas Wolf / foto-tw.de · <a href="https://creativecommons.org/licenses/by-sa/3.0/de/deed.en" target="_blank" rel="noopener">CC BY-SA 3.0 de</a></span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+
   <article class="place">
     <h3>Optie A — De Bodensee</h3>
     <p class="sub">Camping Gohren bij Kressbronn · ACSI</p>
@@ -774,6 +878,30 @@ footer .fin{
     <p class="kicker">Deel 2 · De koninginnenrit</p>
     <h2>Zuid-Tirol &amp; de Stelvio</h2>
     <p class="stage-route">Reschenpas <span class="sep">➔</span> Alt-Graun <span class="sep">➔</span> Vinschgau-dal (Prato / Laas) <span class="sep">➔</span> Stelvio-beklimmingen <span class="sep">➔</span> Goldseeweg</p>
+  </div>
+
+  <div class="shots">
+    <p class="shots-label">📷 Sfeerbeeld — Zuid-Tirol &amp; de koninginnenrit</p>
+    <div class="gallery">
+      <figure class="shot">
+        <a href="https://commons.wikimedia.org/wiki/File:Reschensee_with_Graun_Church_tower_and_boat.jpg" target="_blank" rel="noopener">
+          <img src="img/reschensee.jpg" width="1200" height="675" loading="lazy" decoding="async"
+               alt="De kerktoren van Alt-Graun steekt uit het turquoise Reschenmeer, met een rondvaartboot ernaast">
+        </a>
+        <figcaption>De verdronken kerktoren van Alt-Graun in het Reschenmeer
+          <span class="credit">Foto: Noclador · <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a></span>
+        </figcaption>
+      </figure>
+      <figure class="shot">
+        <a href="https://commons.wikimedia.org/wiki/File:Stelvio_Pass_Bolzano_side_1.jpg" target="_blank" rel="noopener">
+          <img src="img/stelvio.jpg" width="1200" height="800" loading="lazy" decoding="async"
+               alt="De haarspeldbochten van de Stelviopas kronkelen door besneeuwde berghellingen">
+        </a>
+        <figcaption>De 48 haarspeldbochten van de Stelvio aan de Bolzano-kant
+          <span class="credit">Foto: kallerna · <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a></span>
+        </figcaption>
+      </figure>
+    </div>
   </div>
 
   <article class="place">
@@ -826,6 +954,39 @@ footer .fin{
     <p class="kicker">Deel 3 · 14–16 dagen, tegen de klok in</p>
     <h2>De Ronde van Sardinië</h2>
     <p class="stage-route">Livorno <span class="sep">⛴</span> Olbia (±5,5 u) <span class="sep">➔</span> La Maddalena &amp; Gallura <span class="sep">➔</span> Alghero <span class="sep">➔</span> Bosa &amp; Sinis <span class="sep">➔</span> Costa Verde &amp; Cagliari <span class="sep">➔</span> Oostkust SS125 <span class="sep">➔</span> Olbia</p>
+  </div>
+
+  <div class="shots">
+    <p class="shots-label">📷 Sfeerbeeld — Sardinië, van noord naar oost</p>
+    <div class="gallery">
+      <figure class="shot">
+        <a href="https://commons.wikimedia.org/wiki/File:Sardinien_Capo_Testa_Blick_Korsika_2010.jpg" target="_blank" rel="noopener">
+          <img src="img/capo-testa.jpg" width="1200" height="797" loading="lazy" decoding="async"
+               alt="Ronde granietformaties aan de kust van Capo Testa met de zee op de achtergrond">
+        </a>
+        <figcaption>De granietformaties van Capo Testa, het noordelijkste puntje
+          <span class="credit">Foto: Isiwal · <a href="https://creativecommons.org/licenses/by-sa/3.0" target="_blank" rel="noopener">CC BY-SA 3.0</a></span>
+        </figcaption>
+      </figure>
+      <figure class="shot">
+        <a href="https://commons.wikimedia.org/wiki/File:Bosa-2298388_960_720.jpg" target="_blank" rel="noopener">
+          <img src="img/bosa.jpg" width="1200" height="800" loading="lazy" decoding="async"
+               alt="Uitzicht over de pastelkleurige huizen van Bosa aan de rivier de Temo, met de zee in de verte">
+        </a>
+        <figcaption>Bosa aan de Temo, gezien vanaf het Malaspina-kasteel
+          <span class="credit">Foto: Zsuzsanna Tóth · <a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en" target="_blank" rel="noopener">CC0</a></span>
+        </figcaption>
+      </figure>
+      <figure class="shot">
+        <a href="https://commons.wikimedia.org/wiki/File:Cala_Coloritze_vom_Land.JPG" target="_blank" rel="noopener">
+          <img src="img/cala-goloritze.jpg" width="1200" height="799" loading="lazy" decoding="async"
+               alt="De turquoise baai Cala Goloritzé met witte kalkstenen rotspunt">
+        </a>
+        <figcaption>Cala Goloritzé aan de oostkust, onder het Supramonte
+          <span class="credit">Foto: Yesuitus2001 · <a href="https://creativecommons.org/licenses/by-sa/2.5" target="_blank" rel="noopener">CC BY-SA 2.5</a></span>
+        </figcaption>
+      </figure>
+    </div>
   </div>
 
   <article class="place">
@@ -925,6 +1086,39 @@ footer .fin{
     <p class="stage-route">Civitavecchia <span class="sep">➔</span> Sperlonga <span class="sep">➔</span> Pompeï &amp; Vesuvius <span class="sep">➔</span> Amalfikust (per boot) <span class="sep">➔</span> Paestum <span class="sep">➔</span> Cilento &amp; Maratea <span class="sep">➔</span> Scilla &amp; Tropea <span class="sep">➔</span> pendelboot Villa San Giovanni</p>
   </div>
 
+  <div class="shots">
+    <p class="shots-label">📷 Sfeerbeeld — De Zuid-Italiaanse kust</p>
+    <div class="gallery">
+      <figure class="shot">
+        <a href="https://commons.wikimedia.org/wiki/File:Positano_Sunset.JPG" target="_blank" rel="noopener">
+          <img src="img/positano.jpg" width="1200" height="800" loading="lazy" decoding="async"
+               alt="Positano in de schemering: verlichte huizen tegen de steile bergwand aan de Amalfikust">
+        </a>
+        <figcaption>Positano aan de Amalfikust, in de schemering
+          <span class="credit">Foto: JeCCo · <a href="https://creativecommons.org/licenses/by/4.0" target="_blank" rel="noopener">CC BY 4.0</a></span>
+        </figcaption>
+      </figure>
+      <figure class="shot">
+        <a href="https://commons.wikimedia.org/wiki/File:Veduta_di_Paestum_2010.jpg" target="_blank" rel="noopener">
+          <img src="img/paestum.jpg" width="1200" height="736" loading="lazy" decoding="async"
+               alt="De Griekse Dorische tempels van Paestum in een grasveld met verspreide ruïnes">
+        </a>
+        <figcaption>De Griekse tempels van Paestum — beter bewaard dan die in Athene
+          <span class="credit">Foto: Oliver-Bonjoch · <a href="https://creativecommons.org/licenses/by-sa/3.0" target="_blank" rel="noopener">CC BY-SA 3.0</a></span>
+        </figcaption>
+      </figure>
+      <figure class="shot">
+        <a href="https://commons.wikimedia.org/wiki/File:Tropea_-_Veduta_da_Via_Carmine_-_3.jpg" target="_blank" rel="noopener">
+          <img src="img/tropea.jpg" width="1200" height="675" loading="lazy" decoding="async"
+               alt="De oude huizen van Tropea op de rand van een steile klif boven de zee">
+        </a>
+        <figcaption>Tropea op de klif, aan de Kust van de Goden
+          <span class="credit">Foto: Benjamin Smith · <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a></span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+
   <article class="place">
     <h3>Sperlonga</h3>
     <p class="sub">Lazio · sneeuwwit stadje op de rots</p>
@@ -1020,6 +1214,39 @@ footer .fin{
     <p class="stage-route">Messina <span class="sep">➔</span> Taormina &amp; Etna <span class="sep">➔</span> Syracuse &amp; Ortigia <span class="sep">➔</span> Barokvallei <span class="sep">➔</span> Scala dei Turchi &amp; Sciacca <span class="sep">➔</span> Marsala <span class="sep">➔</span> Trapani &amp; Erice <span class="sep">➔</span> Cefalù <span class="sep">➔</span> Milazzo (Stromboli) <span class="sep">➔</span> Messina</p>
   </div>
 
+  <div class="shots">
+    <p class="shots-label">📷 Sfeerbeeld — Sicilië</p>
+    <div class="gallery">
+      <figure class="shot">
+        <a href="https://commons.wikimedia.org/wiki/File:Ancient_Greek-Roman_theatre_(Taormina)_15.jpg" target="_blank" rel="noopener">
+          <img src="img/taormina.jpg" width="1200" height="675" loading="lazy" decoding="async"
+               alt="Het antieke theater van Taormina met de besneeuwde Etna op de achtergrond">
+        </a>
+        <figcaption>Het antieke theater van Taormina, met de Etna erachter
+          <span class="credit">Foto: Derbrauni · <a href="https://creativecommons.org/licenses/by/4.0" target="_blank" rel="noopener">CC BY 4.0</a></span>
+        </figcaption>
+      </figure>
+      <figure class="shot">
+        <a href="https://commons.wikimedia.org/wiki/File:Realmonte_-_Scala_dei_Turchi_0950.jpg" target="_blank" rel="noopener">
+          <img src="img/scala-dei-turchi.jpg" width="1200" height="795" loading="lazy" decoding="async"
+               alt="De witte mergeltrappen van de Scala dei Turchi lopen af naar de zee, met zonnende mensen">
+        </a>
+        <figcaption>De witte mergelkliffen van de Scala dei Turchi
+          <span class="credit">Foto: Monika Durickova · <a href="https://creativecommons.org/licenses/by/2.0" target="_blank" rel="noopener">CC BY 2.0</a></span>
+        </figcaption>
+      </figure>
+      <figure class="shot">
+        <a href="https://commons.wikimedia.org/wiki/File:Cefalu_View_0832.jpg" target="_blank" rel="noopener">
+          <img src="img/cefalu.jpg" width="1200" height="799" loading="lazy" decoding="async"
+               alt="De oude stad Cefalù met okergele huizen en strand, onder de steile rots La Rocca">
+        </a>
+        <figcaption>Cefalù onder zijn rots, aan de noordkust van Sicilië
+          <span class="credit">Foto: Ludvig14 · <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a></span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+
   <article class="place">
     <h3>Taormina &amp; de Etna</h3>
     <p class="sub">De mondaine 'Parel van Sicilië'</p>
@@ -1101,6 +1328,39 @@ footer .fin{
     <p class="stage-route">Villa San Giovanni <span class="sep">➔</span> Matera <span class="sep">➔</span> Altamura <span class="sep">➔</span> Lecce <span class="sep">➔</span> Brindisi <span class="sep">➔</span> Ostuni &amp; Alberobello <span class="sep">➔</span> Bari</p>
   </div>
 
+  <div class="shots">
+    <p class="shots-label">📷 Sfeerbeeld — Basilicata &amp; Puglia</p>
+    <div class="gallery">
+      <figure class="shot">
+        <a href="https://commons.wikimedia.org/wiki/File:Matera_-_View_from_Sant%27Agostino.jpg" target="_blank" rel="noopener">
+          <img src="img/matera.jpg" width="1200" height="801" loading="lazy" decoding="async"
+               alt="De Sassi van Matera: honderden kalkstenen grotwoningen op een heuvel met een klokkentoren">
+        </a>
+        <figcaption>De Sassi van Matera, uitgehouwen in de ravijnwand
+          <span class="credit">Foto: Benjamin Smith · <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a></span>
+        </figcaption>
+      </figure>
+      <figure class="shot">
+        <a href="https://commons.wikimedia.org/wiki/File:Alberobello_-_View_from_Piazza_Giangirolamo_II_-_03.jpg" target="_blank" rel="noopener">
+          <img src="img/alberobello.jpg" width="1200" height="801" loading="lazy" decoding="async"
+               alt="Honderden kegelvormige trulli-daken in het wijkje Rione Monti van Alberobello">
+        </a>
+        <figcaption>De trulli-daken van Rione Monti in Alberobello
+          <span class="credit">Foto: Benjamin Smith · <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a></span>
+        </figcaption>
+      </figure>
+      <figure class="shot">
+        <a href="https://commons.wikimedia.org/wiki/File:A_panorama_of_Ostuni_02.jpg" target="_blank" rel="noopener">
+          <img src="img/ostuni.jpg" width="1200" height="800" loading="lazy" decoding="async"
+               alt="Het witte stadje Ostuni op zijn heuvel, met de kathedraal boven de witgekalkte huizen">
+        </a>
+        <figcaption>Ostuni — 'La Città Bianca' — boven de olijfvlakte
+          <span class="credit">Foto: Maksimsokolov · <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a></span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+
   <article class="place">
     <h3>Matera</h3>
     <p class="sub">De rotsstad · via SS534 / SS106 door de sinaasappelgaarden van Sibari</p>
@@ -1176,6 +1436,39 @@ footer .fin{
     <p class="stage-route">Bari <span class="sep">➔</span> Polignano a Mare &amp; Trani <span class="sep">➔</span> San Marino <span class="sep">➔</span> Ravenna <span class="sep">➔</span> Gardameer (Sirmione) <span class="sep">➔</span> CVD Driel · 16 oktober 2026</p>
   </div>
 
+  <div class="shots">
+    <p class="shots-label">📷 Sfeerbeeld — De Adriatische terugreis</p>
+    <div class="gallery">
+      <figure class="shot">
+        <a href="https://commons.wikimedia.org/wiki/File:70044_Polignano_A_Mare_BA,_Italy_-_panoramio_(4).jpg" target="_blank" rel="noopener">
+          <img src="img/polignano-a-mare.jpg" width="1200" height="795" loading="lazy" decoding="async"
+               alt="De witte huizen van Polignano a Mare op steile kliffen boven de Adriatische Zee">
+        </a>
+        <figcaption>Polignano a Mare, op de kliffen boven de Adriatische Zee
+          <span class="credit">Foto: Luca Margheriti · <a href="https://creativecommons.org/licenses/by-sa/3.0" target="_blank" rel="noopener">CC BY-SA 3.0</a></span>
+        </figcaption>
+      </figure>
+      <figure class="shot">
+        <a href="https://commons.wikimedia.org/wiki/File:Apse_mosaic_-_Basilica_of_San_Vitale_(Ravenna).jpg" target="_blank" rel="noopener">
+          <img src="img/ravenna-san-vitale.jpg" width="1200" height="696" loading="lazy" decoding="async"
+               alt="Byzantijns apsismozaïek in de Basilica di San Vitale met Christus tussen engelen op gouden grond">
+        </a>
+        <figcaption>Het apsismozaïek van de Basilica di San Vitale in Ravenna
+          <span class="credit">Foto: Petar Milošević · <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a></span>
+        </figcaption>
+      </figure>
+      <figure class="shot">
+        <a href="https://commons.wikimedia.org/wiki/File:Italy_-_Sirmione.jpg" target="_blank" rel="noopener">
+          <img src="img/sirmione.jpg" width="1200" height="899" loading="lazy" decoding="async"
+               alt="Luchtfoto van het schiereiland Sirmione in het Gardameer met het waterslot Rocca Scaligera">
+        </a>
+        <figcaption>Sirmione en de Rocca Scaligera, in het Gardameer
+          <span class="credit">Foto: Arne Müseler / arne-mueseler.com · <a href="https://creativecommons.org/licenses/by-sa/3.0/de/deed.en" target="_blank" rel="noopener">CC BY-SA 3.0 de</a></span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+
   <article class="place">
     <h3>Kustparels: Polignano a Mare &amp; Trani</h3>
     <p class="sub">Puglia's Adriatische kant</p>
@@ -1222,6 +1515,7 @@ footer .fin{
   <div class="wrap">
     <p class="fin">Buon viaggio, André &amp; Tineke!</p>
     <p>Samengesteld uit het originele reisboek 'Het Grote Najaarsavontuur 2026'. De blauwe kaders zijn extra suggesties uit online onderzoek (augustus 2026) — controleer openingstijden en dienstregelingen kort voor vertrek.</p>
+    <p>De sfeerbeelden bij de etappes komen van <a href="https://commons.wikimedia.org/">Wikimedia Commons</a> en zijn allemaal vrij te gebruiken (Creative Commons of CC0). Fotograaf en licentie staan onder elke foto; klik op een foto voor de originele bestandspagina met de volledige gegevens.</p>
   </div>
 </footer>
 
